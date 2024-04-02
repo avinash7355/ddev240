@@ -1,0 +1,41 @@
+<?php
+/** @var \Your\Module\ViewModel\CustomViewModel $customViewModel */
+$customViewModel = $block->getData('view_model');
+$task = $customViewModel->getPostCollection();
+?>
+
+<div id="widgetpractice" data-mage-init='{"widgetTask": {}}'>
+
+    <h1><b>Task List</b></h1>
+
+<div class="task-list">
+    <table id="task-table" border="2">
+        <thead>
+            <tr>
+                <th>Entity ID</th>
+                <th>Task Title</th>
+                <th>Task Description</th>
+                <th>Task Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($task as $alltask): ?>
+                <tr>
+                    <td><?= $alltask->getentity_id() ?></td>
+                    <td><?= $alltask->gettask_title() ?></td>
+                    <td><?= $alltask->gettask_description() ?></td>
+                    
+                    <td><input type="checkbox" data-task-id="<?php echo $alltask->getentity_id(); ?>" data-task-title="<?php echo $alltask->gettask_title();?>"<?php echo $alltask->getstatus() ? 'checked' : ''; ?>></td>
+
+                </tr>
+          
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+
+<div id="enabled-tasks-list">
+</div>
+
+<button id="update-status-button">Submit</button>

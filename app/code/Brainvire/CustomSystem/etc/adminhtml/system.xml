@@ -1,0 +1,24 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="your_section_id" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Your Section Label</label>
+            <tab>general</tab>
+            <resource>Magento_Config::config</resource>
+            <group id="your_group_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Your Group Label</label>
+              <field id="productselect" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Product Select Dropdown</label>
+                    <source_model>Brainvire\CustomSystem\Model\Source\Product</source_model>
+                    <frontend_model>Brainvire\CustomSystem\Block\Adminhtml\Select</frontend_model>
+                    <!-- <can_be_empty>1</can_be_empty> -->
+                </field>
+               <field id="image_upload" translate="label" type="image" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+    <label>Image Upload</label>
+    <backend_model>Brainvire\CustomSystem\Model\Config\Backend\Image</backend_model>
+    <upload_dir config="system" scope_info="1">CustomSystem/image_upload</upload_dir>
+    <comment><![CDATA[Allowed file types:png]]></comment>
+</field>
+             </group>   
+        </section>
+    </system>
+</config>

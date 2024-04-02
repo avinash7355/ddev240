@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Code standard by : RH
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="customindexer_indexer" view_id="customindexer_indexer" class="Brainvire\CustomIndexer\Model\Indexer" shared_index="customindexer_indexer">
+        <title translate="true">Custom Indexer Title</title>
+        <description translate="true">Custom Indexer Description</description>
+    </indexer>
+</config>

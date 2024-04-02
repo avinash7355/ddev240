@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Brainvire" translate="label" sortOrder="10">
+            <label>First Tab</label>
+        </tab>
+
+        <section id="HelloWorld" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>CONFIGURATION SECTION</label>
+            <tab>Brainvire</tab>
+            <resource>Brainvire_HelloWorld::config_module1</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer configuration details</label>
+                
+                <field id="custom_radio" translate="label" type="radios" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Are you sure</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+                </field>
+               
+                <field id="custom_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text</label>
+                    <comment>Enter text</comment>
+                    <depends>
+                        <field id="custom_radio">1</field>
+                    </depends>
+                </field>
+               
+                <field id="country" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Country</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <comment>Select your country</comment>
+                    <depends>
+                        <field id="custom_radio">1</field>
+                    </depends>
+                </field>
+               
+                <field id="timezone" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Timezone</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Timezone</source_model>
+                    <depends>
+                        <field id="custom_radio">1</field>
+                    </depends>
+                </field>
+                
+                <field id="custom_checkbox" translate="label" type="checkbox" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>double check info!</label>
+                    <depends>
+                        <field id="custom_radio">1</field>
+                    </depends>
+                </field>
+               
+                <field id="custom_dropdown" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+                    <depends>
+                        <field id="custom_radio">1</field>
+                    </depends>
+                </field>
+                
+            </group>
+        </section>
+
+        <section id="contact" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Contact</label>
+            <tab>Brainvire</tab>
+            <resource>Brainvire_HelloWorld::config_module2</resource>
+            <group id="contact_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Section</label>
+                
+                <field id="username" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Username</label>
+                    <comment>Enter username</comment>
+                </field>
+               
+                <field id="password" translate="label" type="password" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <comment>Enter password</comment>
+                </field>
+                
+            </group>
+        </section>
+    
+    </system>
+</config>

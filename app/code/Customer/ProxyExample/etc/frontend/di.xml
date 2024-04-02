@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Customer\ProxyExample\Model\Featured">
+        <arguments>
+            <argument name="featuredByCategory" xsi:type="object">Customer\ProxyExample\Model\Featured\FeaturedByCategory</argument>
+            <argument name="featuredBySales" xsi:type="object">Customer\ProxyExample\Model\Featured\FeaturedBySales\Proxy</argument>
+            <argument name="logger" xsi:type="object">Customer\ProxyExample\Logger\CustomLogger</argument>
+        </arguments>
+    </type>
+</config>

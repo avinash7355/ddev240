@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects List</title>
+    <style>
+        .project-list {
+            font-family: Arial, sans-serif;
+        }
+
+        .project-list h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .data-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .pagination {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .pagination li {
+            margin: 0;
+            padding: 0;
+            margin-right: 10px; / Adjust as needed for spacing between pagination links /
+        }
+
+        .pagination li.active a {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-list">
+        <h2>Projects List</h2>
+        <?php $customerEntityId = $block->getCustomerEntityId(); ?>
+        <?php $projects = $block->getProjects(); ?>
+        <?php if ($projects && count($projects) > 0): ?>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Customer ID</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($projects as $project): ?>
+                        <?php if ($customerEntityId == $project->getCustomerId()): ?>
+                            <tr>
+                                <td><?php echo $project->getDescription(); ?></td>
+                                <td><?php echo $project->getCustomerId(); ?></td>
+                                <td><?php echo $project->getStatus() ? 'Enable' : 'Disable'; ?></td>                                <td>
+                                    <!-- Edit Button -->
+                                    <a href="<?php echo $block->getUrl('custaccounttab/index/edit', ['id' => $project->getId()]); ?>">Edit</a>
+                                    <a href="javascript:void(0);" onclick="deleteProject(<?php echo $project->getId(); ?>)">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+
+            <?php if ($block->getTotalPages() > 1): ?>
+                <ul class="pagination">
+                    <?php for ($i = 1; $i <= $block->getTotalPages(); $i++): ?>
+                        <li class="page-item <?php echo ($i == $block->getRequest()->getParam('page', 1)) ? 'active' : ''; ?>">
+                            <a class="page-link" href="<?php echo $block->getUrl('*/*/*', ['_current' => true, 'page' => $i]); ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            <?php endif; ?>
+
+        <?php else: ?>
+            <p>No projects found.</p>
+        <?php endif; ?>
+    </div>
+
+    <script type="text/javascript">
+        function deleteProject(projectId) {
+            console.log('id:', projectId);
+            console.log("asd");
+            if (confirm('Are you sure you want to delete this project?')) {
+                // AJAX request to delete the project
+                jQuery.ajax({
+                    url: '<?php echo $block->getUrl('custaccounttab/index/deleterow'); ?>',
+                    type: 'POST',
+                    data: { entity_id: projectId },    
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Successfully deleted');
+                            // Remove the row from the table
+                            jQuery('#project-row-' + projectId).remove();
+                        } else {
+                            alert('Error: ' + response.error);
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while deleting the project.');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

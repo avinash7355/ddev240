@@ -1,0 +1,27 @@
+<?php
+/** @var \Brainvire\Faq\ViewModel\FaqViewModel $faqViewModel */
+$faqViewModel = $block->getData('view_model');
+$LimitedFaq= $faqViewModel->getLimitedFaq();
+?>
+
+<!-- Now you can use $allFaq in your template as needed -->
+<div class="faq-list">
+    <table border="2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($LimitedFaq as $faq): ?>
+                <tr>
+                    <td><?= $faq->getid() ?></td>
+                    <td><?= $faq->getquestion() ?></td>
+                    <td><?= $faq->getanswer() ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

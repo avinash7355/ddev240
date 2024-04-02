@@ -1,0 +1,18 @@
+<?php
+/** @var \Magento\Theme\Block\Html\Pager $block */
+$pager = $block->getPager();
+?>
+<div class="toolbar-pager">
+    <?php if ($pager->getLastPageNum() > 1): ?>
+        <div class="pager">
+            <span class="current-page"><?php echo $pager->getCurrentPage(); ?></span>
+            <span class="pager-label">/</span>
+            <span class="total-pages"><?php echo $pager->getLastPageNum(); ?></span>
+            <?php if ($pager->getCurrentPage() < $pager->getLastPageNum()): ?>
+                <a href="<?php echo $pager->getNextPageUrl(); ?>" class="next-page">
+                    <?php echo __('Next'); ?>
+                </a>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+</div>

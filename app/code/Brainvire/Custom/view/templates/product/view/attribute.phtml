@@ -1,0 +1,24 @@
+<?php
+$Product_temp_attribute = $_product->getResource()->getAttribute('product_temp_attribute');
+if ($Product_temp_attribute->usesSource()) {
+    $radioValue = $_product->getData('product_temp_attribute');
+    $options = $Product_temp_attribute->getSource()->getAllOptions();
+    foreach ($options as $option) {
+        if ($option['value'] == $radioValue) {
+            $radioLabel = $option['label'];
+            echo '<input type="radio" disabled="disabled" checked="checked" />' . $radioLabel;
+        }
+    }
+}
+
+$Product_checkbox_attribute = $_product->getResource()->getAttribute('product_checkbox_attribute');
+if ($Product_checkbox_attribute->usesSource()) {
+    $checkboxValue = $_product->getData('product_checkbox_attribute');
+    if ($checkboxValue) {
+        echo '<input type="checkbox" disabled="disabled" checked="checked" />';
+    } else {
+        echo '<input type="checkbox" disabled="disabled" />';
+    }
+}
+?>
+

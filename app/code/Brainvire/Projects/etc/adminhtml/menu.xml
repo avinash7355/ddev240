@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<menu>
+	<add id="Brainvire_Projects::projects_main" title="Brainvire"  module="Brainvire_Projects" sortOrder="10" resource="Brainvire_Projects::project_main" />
+	<add id="Brainvire_Projects::project_content" title="Projects"  module="Brainvire_Projects" sortOrder="10" parent="Brainvire_Projects::projects_main" action="projects/index/index" resource="Brainvire_Projects::project_content"/>
+</menu>
+</config>

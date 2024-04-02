@@ -1,0 +1,9 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+<!--  Customer Group  -->
+<route url="/V1/custom/test" method="GET">
+<service class="Customer\RestApi\Api\RestApiInterface" method="test"/>
+<resources>
+<resource ref="anonymous"/>
+</resources>
+</route>
+</routes>

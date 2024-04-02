@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Code standard by : RH
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <view id="customindexer_indexer" class="Brainvire\CustomIndexer\Model\Indexer" group="indexer">
+        <subscriptions>
+            <table name="brainvire_contact_queries" entity_column="entity_id" />
+        </subscriptions>
+    </view>
+</config>

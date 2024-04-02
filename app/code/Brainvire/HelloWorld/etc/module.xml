@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Brainvire_HelloWorld" setup_version="1.0.0">
+        <sequence>
+            <!-- Add any module dependencies here if necessary -->
+        </sequence>
+    </module>
+</config>

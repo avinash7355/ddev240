@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Brainvire_SampleGrid::samplegrid" title="Sample Grid" module="Brainvire_SampleGrid" sortOrder="10" action="sample/post" resource="Brainvire_SampleGrid::samplegrid" parent="Custom_Blog::customblog"/>
+    </menu>
+</config>

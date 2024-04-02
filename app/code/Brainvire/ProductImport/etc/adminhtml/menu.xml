@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Brainvire_ProductImport::product_main" 
+        title="Import"
+        module="Brainvire_ProductImport"
+        sortOrder="51" 
+        resource="Brainvire_ProductImport::product_main"/>
+
+        <add id="Brainvire_ProductImport::product_content"
+        title="ProductImport" 
+        module="Brainvire_ProductImport" 
+        sortOrder="10" 
+        action="mport/index/index" 
+        parent="Brainvire_ProductImport::product_main"
+        resource="Brainvire_ProductImport::product_content"/>
+    </menu>
+</config>

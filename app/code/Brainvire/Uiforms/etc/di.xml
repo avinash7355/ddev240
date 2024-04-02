@@ -1,0 +1,23 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="fields_listing_data_source" xsi:type="string">Brainvire\Uiforms\Model\ResourceModel\Fields\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- <type name="Brainvire\Uiforms\Model\Source\FileList">
+        <arguments>
+            <argument name="readFactory" xsi:type="object">Magento\Framework\Filesystem\Directory\ReadFactory</argument>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem</argument>
+        </arguments>
+    </type> -->
+    <virtualType name="Brainvire\Uiforms\Model\ResourceModel\Fields\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+
+            <argument name="mainTable" xsi:type="string">dummy_uiform</argument>
+
+            <argument name="resourceModel" xsi:type="string">Brainvire\Uiforms\Model\ResourceModel\Fields\Collection</argument>
+        </arguments>
+    </virtualType>
+</config>

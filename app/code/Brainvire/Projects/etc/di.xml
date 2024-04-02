@@ -1,0 +1,17 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="projects_listing_data_source" xsi:type="string">Brainvire\Projects\Model\ResourceModel\Projects\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Brainvire\Projects\Model\ResourceModel\Projects\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+
+            <argument name="mainTable" xsi:type="string">brainvire_projects</argument>
+
+            <argument name="resourceModel" xsi:type="string">Brainvire\Projects\Model\ResourceModel\Projects\Collection</argument>
+        </arguments>
+    </virtualType>
+</config>

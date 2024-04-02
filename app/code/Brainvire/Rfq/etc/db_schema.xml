@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="brainvire_rfq" resource="default" engine="innodb" comment="Custom Form Data Table">
+        <column xsi:type="int" name="product_id" unsigned="false" identity="true" nullable="false" comment="Product ID"/>
+        <column xsi:type="varchar" name="first_name" nullable="false" length="50" comment="First Name"/>
+        <column xsi:type="varchar" name="last_name" nullable="false" length="50" comment="Last Name"/>
+        <column xsi:type="varchar" name="street_address" nullable="false" length="100" comment="Street Address"/>
+        <column xsi:type="varchar" name="zip_code" nullable="false" length="20" comment="Zip/Postal Code"/>
+        <column xsi:type="varchar" name="apt" nullable="true" length="255" comment="Apt / Suite / Bldg"/>
+        <column xsi:type="varchar" name="city" nullable="false" length="255" comment="City"/>
+        <column xsi:type="varchar" name="country" nullable="false" length="255" comment="Country"/>
+        <column xsi:type="varchar" name="state" nullable="false" length="255" comment="State/Province"/>
+        <column xsi:type="varchar" name="phone_number" nullable="false" length="20" comment="Phone Number"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Email"/>
+        <column xsi:type="int" name="quantity" nullable="false" comment="Quantity"/>
+        <column xsi:type="decimal" name="target_price" nullable="false" unsigned="false" comment="Target Price (US $)"/>
+        <column xsi:type="text" name="comment" nullable="true" comment="Comment"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="product_id"/>
+        </constraint>
+    </table>
+</schema>

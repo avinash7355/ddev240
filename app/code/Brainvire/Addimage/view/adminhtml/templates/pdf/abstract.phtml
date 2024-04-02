@@ -1,0 +1,5 @@
+<?php foreach ($invoice->getAllItems() as $item) : ?>
+    <?php $product = $item->getOrderItem()->getProduct(); ?>
+    <?php $imageUrl = $block->getUrl('pub/media/catalog').'product'.$product->getImage(); ?>
+    <img src="<?= $imageUrl ?>" alt="<?= $block->escapeHtml($product->getName()) ?>" width="50" height="50" />
+<?php endforeach; ?>

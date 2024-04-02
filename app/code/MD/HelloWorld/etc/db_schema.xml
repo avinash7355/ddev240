@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="md_helloworld" resource="default" engine="innodb" comment="MD Helloworld">
+        <column xsi:type="smallint" name="id" padding="7" unsigned="false" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="author_name" nullable="false" length="20" comment="Name" />
+        <column xsi:type="varchar" name="email" nullable="false" length="20" comment="Email" />
+        <column xsi:type="varchar" name="description2" nullable="false" length="255" comment="Description" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+
+    <!-- Add AnuragSeth here -->
+     <table name="AnuragSeth" resource="default" engine="innodb" comment="Your New Table">
+        <column xsi:type="smallint" name="id" padding="7" unsigned="false" nullable="false" identity="true" comment="ID" />
+        <!-- Change the data type of helloworld_id to smallint to match the md_helloworld.id column -->
+        <column xsi:type="smallint" name="helloworld_id" padding="7" unsigned="true" nullable="false" comment="MD Helloworld ID" />
+        <column xsi:type="varchar" name="some_data" nullable="true" length="255" comment="Some Data" />
+        <!-- Add the new column "new_column" -->
+        <column xsi:type="varchar" name="new_column" nullable="true" length="255" comment="New Column" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="FK_AnuragSeth_MD_HELLOWORLD_ID_MD_HELLOWORLD" table="AnuragSeth" column="id" referenceTable="md_helloworld" referenceColumn="id" onDelete="CASCADE"/>
+    </table>
+</schema>
+
+
+
+
+
+

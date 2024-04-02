@@ -1,0 +1,77 @@
+<!-- ko foreach: elems -->
+<tr data-ampgrid-js="tierprice">
+    <td class="col-websites">
+        <select class="admin__control-select" data-bind="
+            attr: {name: $parent.htmlName + '[' + $index() + '][website_id]'},
+            css: $parent.htmlClass,
+            value: selectedWebsite">
+            <!-- ko foreach: $parent.websites -->
+            <option data-bind="value: $index(), text: $parents[1].getWebsite(name, currency)"></option>
+            <!-- /ko -->
+        </select>
+    </td>
+    <td class="col-customer-group">
+        <select class="admin__control-select custgroup"
+                data-bind="
+                    attr: {name: $parent.htmlName + '[' + $index() + '][cust_group]'},
+                    css: $parent.htmlClass,
+                    value: selectedGroup">
+            <!-- ko foreach: { data: Object.keys($parent.groups), as: 'groupKey' }  -->
+            <option data-bind="value: groupKey, text: $parents[1].groups[groupKey]"></option>
+            <!-- /ko -->
+        </select>
+    </td>
+    <td class="col-qty">
+        <input class="qty"
+               type="text"
+               data-validate="{
+                'required-entry':true,
+                'validate-greater-than-zero':true,
+                'validate-digits': false,
+                'validate-number': true}"
+               data-bind="
+                valueUpdate: valueUpdate,
+                attr: {name: $parent.htmlName + '[' + $index() + '][price_qty]'},
+                css: $parent.htmlClass,
+                value: qty"
+        >
+    </td>
+    <td class="col-price-value-type">
+        <select class="admin__control-select value-type"
+                data-bind="
+                    attr: {name: $parent.htmlName + '[' + $index() + '][value_type]'},
+                    css: $parent.htmlClass,
+                    value: selectedPriceType,
+                    options: $parent.priceTypes,
+                    optionsText: 'label',
+                    optionsValue: 'value',">
+        </select>
+    </td>
+    <td class="col-price">
+        <!-- ko if: selectedPriceType() === 'fixed' -->
+        <input type="text"
+               data-validate="{'required-entry':true,'validate-zero-or-greater':true}"
+               data-bind="
+                valueUpdate: valueUpdate,
+                attr: {name: $parent.htmlName + '[' + $index() + '][price]'},
+                css: $parent.htmlClass + ' ' + $parent.priceValueValidationClass,
+                value: itemPrice">
+        <!-- /ko -->
+        <!-- ko if: selectedPriceType() === 'percent' -->
+        <input type="text"
+               data-validate="{'required-entry':true,'validate-positive-percent-decimal': 'true'}"
+               data-bind="
+                valueUpdate: valueUpdate,
+                attr: {name: $parent.htmlName + '[' + $index() + '][price]'},
+                css: $parent.htmlClass + ' ' + $parent.priceValueValidationClass,
+                value: itemPrice">
+        <!-- /ko -->
+    </td>
+    <td class="col-delete">
+        <button role="button" type="button" data-bind="
+            attr: {title: $parent.deleteButtonTitle, 'aria-label': $parent.deleteButtonTitle},
+            i18n: 'Delete',
+            click: $parent.deleteRow.bind($parent, $data)"></button>
+    </td>
+</tr>
+<!-- /ko -->

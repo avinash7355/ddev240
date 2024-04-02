@@ -1,0 +1,19 @@
+<div id="custom-component-container" data-bind="scope: 'custom-component'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#custom-component-container": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "custom-component": {
+                        "component": "Brainvire_CustomComponent/js/custom-component",
+                        "compo": <?php echo $block->feedbackLastData(); ?>
+                    }
+                }
+            }
+        }
+    }
+</script>
+

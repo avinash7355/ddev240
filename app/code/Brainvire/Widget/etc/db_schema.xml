@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="bv_tasks_widget" resource="default" engine="innodb" comment="Custom Tasks Widget Table">
+        <column xsi:type="int" name="entity_id" padding="6" unsigned="true" nullable="false" comment="Entity ID" identity="true"/>
+        <column xsi:type="varchar" name="task_title" nullable="false" length="255" comment="Task Title"/>
+        <column xsi:type="text" name="task_description" nullable="false" comment="Task Description"/>
+        <column xsi:type="tinyint" name="status" nullable="false" comment="Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

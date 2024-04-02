@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Brainvire_Widget::widget" title="Widget" module="Brainvire_Widget" sortOrder="51" resource="Brainvire_Widget::widget"/>
+        <add id="Brainvire_Widget::index" title="Widget grid" module="Brainvire_Widget" sortOrder="10" action="widget/index" resource="Brainvire_Widget::index" parent="Brainvire_Widget::widget"/>
+    </menu>
+</config>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">productimport.product_listing_data_source</item>
+            <item name="deps" xsi:type="string">productimport.product_listing_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">fields</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">fields_form</item>
+        </item>
+        <item name="spinner" xsi:type="string">fields</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="string">Brainvire\Uiforms\Block\Adminhtml\Index\Edit\Button\CheckData</item>
+        </item>
+    </argument>
+    <dataSource name="product_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Brainvire\Uiforms\Model\DataProvider</argument>
+            <argument name="name" xsi:type="string">product_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+             <item name="submit_url" xsi:type="url" path="import/index/checkData" />
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="fields">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">Check xml files</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <field name="import_xml">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="editor" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Product files</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                </item>
+                <item name="options" xsi:type="object">Brainvire\Uiforms\Model\Source\FileList</item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

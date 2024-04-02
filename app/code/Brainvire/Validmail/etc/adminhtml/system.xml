@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="email_settings" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Block Emails</label>
+            <tab>general</tab>
+            <resource>Module_BlockEmail::config_email_settings</resource>
+            <group id="general_settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Email Settings</label>
+                <field id="blocked_domains" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Blocked Email Domains</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <table name="brainvire_form_field" resource="default" engine="innodb" comment="Brainvire_Form_Field">
+      <column xsi:type="int" name="entity_id" padding="10" unsigned="false" nullable="false" identity="true" comment="Entity ID" />
+      <column xsi:type="varchar" name="first_name" nullable="false" length="50" comment="First Name" />
+      <column xsi:type="varchar" name="last_name" length="50" nullable="false"  comment="Last Name" />
+       <column xsi:type="varchar" name="email" nullable="false" length="50" comment="Email" />
+      <constraint xsi:type="primary" referenceId="PRIMARY">
+         <column name="entity_id" />
+      </constraint>
+   </table>
+</schema>
+
+<!-- Note :-column name should start with small letter -->

@@ -1,0 +1,24 @@
+type Query {
+    blogDetails (
+        entity_id: Int @doc(description: "Search Docs List.")
+    ): BlogDetails @resolver(class: "Brainvire\\FirstGraphql\\Model\\Resolver\\BlogDetails") @doc(description: "Return details about a Blog Details.")
+    projectList(
+        entity_id: Int @doc(description: "Search Docs List.")
+    ): ProjectList @resolver(class: "Brainvire\\FirstGraphql\\Model\\Resolver\\Project") @doc(description: "Return details about a Blog Details.")
+    
+    
+}
+
+type BlogDetails {
+    entity_id: Int @doc(description: "The ID of a Post page.")
+    name: String @doc(description: "The Post name.")
+    telephone: String @doc(description: "Url Key.")
+    department: String @doc(description: "Post Content")
+    comment: String @doc(description: "Blog Status")
+}
+type ProjectList{
+     entity_id: Int @doc(description: "The ID of a Post page.")
+     description: String @doc(description: "Blog Status")
+
+
+}

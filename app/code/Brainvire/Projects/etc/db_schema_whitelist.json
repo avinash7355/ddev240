@@ -1,0 +1,15 @@
+{
+    "brainvire_projects": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "description": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

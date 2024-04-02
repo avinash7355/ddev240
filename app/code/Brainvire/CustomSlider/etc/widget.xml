@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Created By : Rohan Hapani
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="rh_custom_widget" class="Brainvire\CustomSlider\Block\Widget\PageWidget">
+        <label>RH Helloworld Custom Widget</label>
+        <description>RH Helloworld Widget Example</description>
+        <parameters>
+            <parameter name="rh_title" xsi:type="text" visible="true" required="true">
+                <label translate="true">RH Title</label>
+            </parameter>
+            <parameter name="rh_description" xsi:type="block" visible="true" required="true">
+                 <label translate="true">RH Description</label>
+                 <block class="Brainvire\CustomSlider\Block\Adminhtml\Widget\TextAreaField"/>
+            </parameter>
+        </parameters>
+   </widget>
+</widgets>

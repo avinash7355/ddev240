@@ -1,0 +1,28 @@
+<div>
+    <h1><b>Task List</b></h1>
+    <div class="task-list">
+        <table id="tasktable" border="2">
+            <thead>
+                <tr>
+                    <th>Entity ID</th>
+                    <th>Task Title</th>
+                    <th>Task Description</th>
+                    <th>Task Status</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: compo">
+                <tr>
+                    <td data-bind="text: entity_id"></td>
+                    <td data-bind="text: task_title"></td>
+                    <td data-bind="text: task_description"></td>
+                    <td>
+                        <td><input type="checkbox" data-bind="attr: { 'data-task-id': entity_id, 'checked': status == 1 }"></td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Add the submit button here -->
+    <button data-bind="click: updateData">Update </button>
+</div>

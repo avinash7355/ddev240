@@ -1,0 +1,15 @@
+<?php
+/** @var \Magento\Catalog\Block\Product\ProductList\Toolbar $block */
+$toolbar = $block->getToolbar();
+?>
+<div class="toolbar-top">
+    <div class="toolbar-sort-by">
+        <?php echo $block->getSortByHtml(); ?>
+    </div>
+    <div class="toolbar-show-per-page">
+        <?php echo $block->getShowPerPageHtml(); ?>
+    </div>
+</div>
+<div class="toolbar-bottom">
+    <?php echo $block->getPagerHtml(); ?>
+</div>
